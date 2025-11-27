@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   description: "BLIK je stolová hra s AR vrstvou, navrhnutá pre banky, poisťovne, školy a firmy. Gamifikovaný komunikačný nástroj pre vaše publikum.",
   keywords: "AR hra, rozšírená realita, stolová hra, gamifikácia, firemná komunikácia, vzdelávanie, marketing",
   authors: [{ name: "Gamefinity" }],
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
   openGraph: {
     title: "BLIK | Stolová hra s rozšírenou realitou",
     description: "BLIK je stolová hra s AR vrstvou, navrhnutá pre banky, poisťovne, školy a firmy.",
