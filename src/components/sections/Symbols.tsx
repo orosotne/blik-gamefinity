@@ -112,7 +112,7 @@ export default function Symbols() {
           </div>
           <div className="w-px h-12 bg-border" />
           <div className="text-center">
-            <div className="text-4xl font-bold text-gradient-warm">58</div>
+            <div className="text-4xl font-bold text-gradient-warm">57</div>
             <div className="text-sm text-foreground-secondary">Kariet v sade</div>
           </div>
           <div className="w-px h-12 bg-border" />
