@@ -42,6 +42,61 @@ const symbols: Symbol[] = [
   { id: '8', name: 'Destinácia', icon: MapPin, color: '#10B981', description: 'Objavte nové miesta', category: 'travel' },
 ];
 
+// 3D Cube Component - renders a rotating cube with icon on each face
+function Cube3D({ icon: Icon, color, size = 80 }: { icon: React.ElementType; color: string; size?: number }) {
+  const half = size / 2;
+  
+  const faceStyle = (transform: string): React.CSSProperties => ({
+    position: 'absolute',
+    width: size,
+    height: size,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    background: `linear-gradient(135deg, ${color}30 0%, ${color}15 100%)`,
+    border: `1px solid ${color}40`,
+    borderRadius: 12,
+    backfaceVisibility: 'visible',
+    transform,
+  });
+
+  return (
+    <div
+      style={{
+        width: size,
+        height: size,
+        position: 'relative',
+        transformStyle: 'preserve-3d',
+      }}
+    >
+      {/* Front */}
+      <div style={faceStyle(`translateZ(${half}px)`)}>
+        <Icon style={{ color, width: size * 0.5, height: size * 0.5 }} />
+      </div>
+      {/* Back */}
+      <div style={faceStyle(`rotateY(180deg) translateZ(${half}px)`)}>
+        <Icon style={{ color, width: size * 0.5, height: size * 0.5 }} />
+      </div>
+      {/* Right */}
+      <div style={faceStyle(`rotateY(90deg) translateZ(${half}px)`)}>
+        <Icon style={{ color, width: size * 0.5, height: size * 0.5 }} />
+      </div>
+      {/* Left */}
+      <div style={faceStyle(`rotateY(-90deg) translateZ(${half}px)`)}>
+        <Icon style={{ color, width: size * 0.5, height: size * 0.5 }} />
+      </div>
+      {/* Top */}
+      <div style={faceStyle(`rotateX(90deg) translateZ(${half}px)`)}>
+        <Icon style={{ color, width: size * 0.5, height: size * 0.5 }} />
+      </div>
+      {/* Bottom */}
+      <div style={faceStyle(`rotateX(-90deg) translateZ(${half}px)`)}>
+        <Icon style={{ color, width: size * 0.5, height: size * 0.5 }} />
+      </div>
+    </div>
+  );
+}
+
 interface ARCardPreviewProps {
   category?: 'all' | 'bank' | 'insurance' | 'school' | 'company' | 'travel';
 }
@@ -136,58 +191,66 @@ export default function ARCardPreview({ category = 'all' }: ARCardPreviewProps) 
                 <AnimatePresence>
                   {activeSymbol && !isScanning && (
                     <motion.div
-                      initial={{ opacity: 0, y: 50, scale: 0.5, rotateX: -30 }}
-                      animate={{ opacity: 1, y: -80, scale: 1, rotateX: 0 }}
+                      initial={{ opacity: 0, y: 50, scale: 0.5 }}
+                      animate={{ opacity: 1, y: -60, scale: 1 }}
                       exit={{ opacity: 0, y: 50, scale: 0.5 }}
                       transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-                      className="absolute left-1/2 -translate-x-1/2 top-0"
+                      className="absolute left-1/2 -translate-x-1/2 top-0 flex flex-col items-center"
                     >
-                      {/* 3D floating object container */}
+                      {/* 3D floating cube container */}
                       <motion.div
                         className="relative"
                         animate={{ 
-                          y: [0, -10, 0],
+                          y: [0, -8, 0],
                           rotateY: [0, 360],
+                          rotateX: [0, 15, 0, -15, 0],
                         }}
                         transition={{ 
-                          y: { duration: 2, repeat: Infinity, ease: 'easeInOut' },
-                          rotateY: { duration: 8, repeat: Infinity, ease: 'linear' },
+                          y: { duration: 2.5, repeat: Infinity, ease: 'easeInOut' },
+                          rotateY: { duration: 6, repeat: Infinity, ease: 'linear' },
+                          rotateX: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
                         }}
-                        style={{ perspective: 1000 }}
+                        style={{ 
+                          perspective: 800,
+                          transformStyle: 'preserve-3d',
+                        }}
                       >
-                        {/* Main 3D object */}
+                        {/* 3D Cube */}
                         <div 
-                          className="w-24 h-24 md:w-32 md:h-32 rounded-2xl flex items-center justify-center relative"
+                          className="relative"
                           style={{ 
-                            background: `linear-gradient(135deg, ${activeSymbol.color}40 0%, ${activeSymbol.color}20 100%)`,
-                            boxShadow: `0 20px 60px ${activeSymbol.color}40`,
+                            filter: `drop-shadow(0 20px 40px ${activeSymbol.color}50)`,
                           }}
                         >
-                          <activeSymbol.icon 
-                            className="w-12 h-12 md:w-16 md:h-16" 
-                            style={{ color: activeSymbol.color }}
+                          <Cube3D 
+                            icon={activeSymbol.icon} 
+                            color={activeSymbol.color} 
+                            size={70}
                           />
                           
                           {/* Sparkle effects */}
                           <Sparkles 
-                            className="absolute -top-2 -right-2 w-6 h-6 text-white animate-pulse" 
+                            className="absolute -top-3 -right-3 w-5 h-5 text-white animate-pulse" 
                           />
                           <Sparkles 
-                            className="absolute -bottom-1 -left-1 w-4 h-4 text-white/60 animate-pulse" 
+                            className="absolute -bottom-2 -left-2 w-4 h-4 text-white/60 animate-pulse" 
                             style={{ animationDelay: '0.5s' }}
                           />
                         </div>
+                      </motion.div>
 
-                        {/* Info bubble */}
-                        <motion.div
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: 0.3 }}
-                          className="absolute -right-4 top-0 bg-background-secondary/90 backdrop-blur-xl rounded-lg px-3 py-2 border border-border min-w-[120px]"
-                        >
-                          <p className="text-xs font-semibold text-foreground">{activeSymbol.name}</p>
-                          <p className="text-[10px] text-foreground-secondary">{activeSymbol.description}</p>
-                        </motion.div>
+                      {/* Info bubble - BELOW the cube, not overlapping */}
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4 }}
+                        className="mt-4 bg-background-secondary/95 backdrop-blur-xl rounded-lg px-4 py-2 border border-border text-center"
+                        style={{
+                          boxShadow: `0 8px 32px ${activeSymbol.color}20`,
+                        }}
+                      >
+                        <p className="text-xs font-semibold text-foreground">{activeSymbol.name}</p>
+                        <p className="text-[10px] text-foreground-secondary">{activeSymbol.description}</p>
                       </motion.div>
                     </motion.div>
                   )}

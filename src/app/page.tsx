@@ -1,6 +1,8 @@
 import {
   Hero,
+  ValueBanner,
   ProblemSolution,
+  GameIntro,
   HowItWorks,
   ARPreviewSection,
   Symbols,
@@ -13,7 +15,9 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <ValueBanner />
       <ProblemSolution />
+      <GameIntro />
       <HowItWorks />
       <ARPreviewSection />
       <Symbols />

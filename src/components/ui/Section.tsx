@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   container?: boolean;
   background?: 'default' | 'secondary' | 'gradient' | 'grid' | 'dots';
-  padding?: 'none' | 'sm' | 'md' | 'lg';
+  padding?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
 }
 
 const backgrounds: Record<string, string> = {
@@ -23,6 +23,7 @@ const paddings: Record<string, string> = {
   sm: 'py-12 md:py-16',
   md: 'py-16 md:py-24',
   lg: 'py-24 md:py-32',
+  xl: 'py-32 md:py-40',
 };
 
 const Section = forwardRef<HTMLElement, SectionProps>(
