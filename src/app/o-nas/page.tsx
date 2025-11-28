@@ -68,7 +68,7 @@ const team = [
 
 const milestones = [
   { year: '2021', event: 'Založenie Gamefinity' },
-  { year: '2022', event: 'Prvý klient - Slovenská banka' },
+  { year: '2022', event: 'Prvý klient - Alfpaureo' },
   { year: '2023', event: 'Rozšírenie do 5 odvetví' },
   { year: '2024', event: 'Launch BLIK 2.0 s pokročilým AR' },
   { year: '2025', event: 'Expanzia do Čiech a Rakúska' },
