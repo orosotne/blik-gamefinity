@@ -62,7 +62,7 @@ const team = [
     bio: 'Formuje vizuálnu identitu hry aj AR vrstvy.',
     initials: 'MM',
     linkedin: null,
-    photo: '/images/o-nas/team/milos miškeje.png',
+    photo: '/images/o-nas/team/miloš miškeje.jpg',
   },
 ];
 
