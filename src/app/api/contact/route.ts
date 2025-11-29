@@ -1,6 +1,140 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
+// HTML šablóna pre potvrdzovací email zákazníkovi
+function getConfirmationEmailTemplate(name: string, reason: string, company: string, message: string): string {
+  const firstName = name.split(' ')[0]; // Použijeme len krstné meno pre priateľskejší tón
+  
+  return `
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0a0a0f;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color: #0a0a0f;">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width: 600px; background-color: #131318; border-radius: 16px; overflow: hidden; border: 1px solid #2a2a35;">
+          
+          <!-- Header s gradientom -->
+          <tr>
+            <td style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); padding: 32px 40px; text-align: center;">
+              <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700; letter-spacing: -0.5px;">
+                🎯 BLIK
+              </h1>
+              <p style="margin: 8px 0 0 0; color: rgba(255,255,255,0.9); font-size: 14px;">
+                Gamefinity
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Hlavný obsah -->
+          <tr>
+            <td style="padding: 40px;">
+              <h2 style="margin: 0 0 16px 0; color: #ffffff; font-size: 24px; font-weight: 600;">
+                Ďakujeme za vašu správu!
+              </h2>
+              
+              <p style="margin: 0 0 24px 0; color: #a1a1aa; font-size: 16px; line-height: 1.6;">
+                Dobrý deň <span style="color: #ffffff; font-weight: 500;">${firstName}</span>,
+              </p>
+              
+              <p style="margin: 0 0 32px 0; color: #a1a1aa; font-size: 16px; line-height: 1.6;">
+                vašu správu sme úspešne prijali. Budeme vás kontaktovať 
+                <span style="color: #8b5cf6; font-weight: 500;">do 24 hodín</span>.
+              </p>
+              
+              <!-- Súhrn správy -->
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color: #1a1a22; border-radius: 12px; border: 1px solid #2a2a35;">
+                <tr>
+                  <td style="padding: 24px;">
+                    <p style="margin: 0 0 16px 0; color: #6366f1; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
+                      📋 Súhrn vašej správy
+                    </p>
+                    
+                    ${reason ? `
+                    <p style="margin: 0 0 8px 0; color: #71717a; font-size: 14px;">
+                      <span style="color: #a1a1aa;">Dôvod:</span> 
+                      <span style="color: #ffffff;">${reason}</span>
+                    </p>
+                    ` : ''}
+                    
+                    ${company ? `
+                    <p style="margin: 0 0 16px 0; color: #71717a; font-size: 14px;">
+                      <span style="color: #a1a1aa;">Spoločnosť:</span> 
+                      <span style="color: #ffffff;">${company}</span>
+                    </p>
+                    ` : ''}
+                    
+                    <div style="border-top: 1px solid #2a2a35; padding-top: 16px; margin-top: 8px;">
+                      <p style="margin: 0 0 8px 0; color: #a1a1aa; font-size: 14px; font-weight: 500;">
+                        Vaša správa:
+                      </p>
+                      <p style="margin: 0; color: #d4d4d8; font-size: 14px; line-height: 1.6; font-style: italic;">
+                        "${message.replace(/\n/g, '<br>')}"
+                      </p>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              
+              <!-- CTA sekcia -->
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-top: 32px;">
+                <tr>
+                  <td style="text-align: center;">
+                    <p style="margin: 0 0 16px 0; color: #71717a; font-size: 14px;">
+                      Medzitým sa môžete pozrieť na:
+                    </p>
+                    <a href="https://blik.gamefinity.sk/ako-to-funguje" style="display: inline-block; padding: 12px 24px; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: #ffffff; text-decoration: none; border-radius: 8px; font-size: 14px; font-weight: 500; margin: 0 8px 8px 0;">
+                      Ako BLIK funguje →
+                    </a>
+                    <a href="https://blik.gamefinity.sk/riesenia" style="display: inline-block; padding: 12px 24px; background-color: #2a2a35; color: #ffffff; text-decoration: none; border-radius: 8px; font-size: 14px; font-weight: 500;">
+                      Naše riešenia
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+          <!-- Footer -->
+          <tr>
+            <td style="background-color: #0a0a0f; padding: 32px 40px; border-top: 1px solid #2a2a35;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td style="text-align: center;">
+                    <p style="margin: 0 0 8px 0; color: #ffffff; font-size: 14px; font-weight: 500;">
+                      S pozdravom,<br>
+                      <span style="color: #8b5cf6;">Tím Gamefinity</span>
+                    </p>
+                    
+                    <p style="margin: 16px 0 0 0; color: #71717a; font-size: 13px; line-height: 1.8;">
+                      📧 <a href="mailto:martin.miskeje@gamefinity.sk" style="color: #a1a1aa; text-decoration: none;">martin.miskeje@gamefinity.sk</a><br>
+                      📞 <a href="tel:+421917588738" style="color: #a1a1aa; text-decoration: none;">+421 917 588 738</a><br>
+                      🌐 <a href="https://blik.gamefinity.sk" style="color: #8b5cf6; text-decoration: none;">blik.gamefinity.sk</a>
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+        </table>
+        
+        <!-- Spodný text -->
+        <p style="margin: 24px 0 0 0; color: #52525b; font-size: 12px; text-align: center;">
+          Tento email bol automaticky vygenerovaný po odoslaní kontaktného formulára.
+        </p>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+  `;
+}
+
 // Rate limiting - jednoduchá in-memory implementácia
 // V produkcii by bolo lepšie použiť Redis alebo Upstash
 const rateLimitMap = new Map<string, { count: number; timestamp: number }>();
@@ -92,7 +226,8 @@ export async function POST(request: Request) {
       );
     }
 
-    const { error } = await resend.emails.send({
+    // 1. Email pre teba (notifikácia)
+    const { error: notificationError } = await resend.emails.send({
       from: 'BLIK Gamefinity <noreply@blik.gamefinity.sk>',
       to: ['martin.miskeje@gamefinity.sk'],
       replyTo: email,
@@ -116,12 +251,25 @@ export async function POST(request: Request) {
       `,
     });
 
-    if (error) {
-      console.error('Resend error:', error);
+    if (notificationError) {
+      console.error('Resend notification error:', notificationError);
       return NextResponse.json(
         { error: 'Nepodarilo sa odoslať email' },
         { status: 500 }
       );
+    }
+
+    // 2. Email pre zákazníka (potvrdenie)
+    const { error: confirmationError } = await resend.emails.send({
+      from: 'BLIK Gamefinity <noreply@blik.gamefinity.sk>',
+      to: [email],
+      subject: 'Ďakujeme za vašu správu | BLIK Gamefinity',
+      html: getConfirmationEmailTemplate(name, reason || '', company || '', message),
+    });
+
+    if (confirmationError) {
+      // Logujeme chybu, ale nevraciame error - hlavný email bol odoslaný
+      console.error('Resend confirmation error:', confirmationError);
     }
 
     return NextResponse.json({ success: true });
