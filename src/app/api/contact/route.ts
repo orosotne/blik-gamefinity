@@ -20,11 +20,19 @@ function getConfirmationEmailTemplate(name: string, reason: string, company: str
           
           <!-- Header s gradientom -->
           <tr>
-            <td style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); padding: 32px 40px; text-align: center;">
-              <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700; letter-spacing: -0.5px;">
-                🎯 BLIK
+            <td style="background: linear-gradient(135deg, #0066FF 0%, #00D9A6 100%); padding: 32px 40px; text-align: center;">
+              <!-- Logo "B" -->
+              <table role="presentation" cellspacing="0" cellpadding="0" style="margin: 0 auto 12px auto;">
+                <tr>
+                  <td style="width: 56px; height: 56px; border-radius: 14px; background: rgba(255,255,255,0.2); text-align: center; vertical-align: middle;">
+                    <span style="color: #ffffff; font-size: 32px; font-weight: 800; font-family: 'Segoe UI', Arial, sans-serif; line-height: 56px;">B</span>
+                  </td>
+                </tr>
+              </table>
+              <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 700; letter-spacing: -0.5px;">
+                BLIK
               </h1>
-              <p style="margin: 8px 0 0 0; color: rgba(255,255,255,0.9); font-size: 14px;">
+              <p style="margin: 4px 0 0 0; color: rgba(255,255,255,0.9); font-size: 13px;">
                 Gamefinity
               </p>
             </td>
@@ -43,14 +51,14 @@ function getConfirmationEmailTemplate(name: string, reason: string, company: str
               
               <p style="margin: 0 0 32px 0; color: #a1a1aa; font-size: 16px; line-height: 1.6;">
                 vašu správu sme úspešne prijali. Budeme vás kontaktovať 
-                <span style="color: #8b5cf6; font-weight: 500;">do 24 hodín</span>.
+                <span style="color: #00D9A6; font-weight: 500;">do 24 hodín</span>.
               </p>
               
               <!-- Súhrn správy -->
               <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color: #1a1a22; border-radius: 12px; border: 1px solid #2a2a35;">
                 <tr>
                   <td style="padding: 24px;">
-                    <p style="margin: 0 0 16px 0; color: #6366f1; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
+                    <p style="margin: 0 0 16px 0; color: #0066FF; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
                       📋 Súhrn vašej správy
                     </p>
                     
@@ -87,7 +95,7 @@ function getConfirmationEmailTemplate(name: string, reason: string, company: str
                     <p style="margin: 0 0 16px 0; color: #71717a; font-size: 14px;">
                       Medzitým sa môžete pozrieť na:
                     </p>
-                    <a href="https://blik.gamefinity.sk/ako-to-funguje" style="display: inline-block; padding: 12px 24px; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: #ffffff; text-decoration: none; border-radius: 8px; font-size: 14px; font-weight: 500; margin: 0 8px 8px 0;">
+                    <a href="https://blik.gamefinity.sk/ako-to-funguje" style="display: inline-block; padding: 12px 24px; background: linear-gradient(135deg, #0066FF 0%, #00D9A6 100%); color: #ffffff; text-decoration: none; border-radius: 8px; font-size: 14px; font-weight: 500; margin: 0 8px 8px 0;">
                       Ako BLIK funguje →
                     </a>
                     <a href="https://blik.gamefinity.sk/riesenia" style="display: inline-block; padding: 12px 24px; background-color: #2a2a35; color: #ffffff; text-decoration: none; border-radius: 8px; font-size: 14px; font-weight: 500;">
@@ -107,13 +115,13 @@ function getConfirmationEmailTemplate(name: string, reason: string, company: str
                   <td style="text-align: center;">
                     <p style="margin: 0 0 8px 0; color: #ffffff; font-size: 14px; font-weight: 500;">
                       S pozdravom,<br>
-                      <span style="color: #8b5cf6;">Tím Gamefinity</span>
+                      <span style="color: #00D9A6;">Tím Gamefinity</span>
                     </p>
                     
                     <p style="margin: 16px 0 0 0; color: #71717a; font-size: 13px; line-height: 1.8;">
                       📧 <a href="mailto:martin.miskeje@gamefinity.sk" style="color: #a1a1aa; text-decoration: none;">martin.miskeje@gamefinity.sk</a><br>
                       📞 <a href="tel:+421917588738" style="color: #a1a1aa; text-decoration: none;">+421 917 588 738</a><br>
-                      🌐 <a href="https://blik.gamefinity.sk" style="color: #8b5cf6; text-decoration: none;">blik.gamefinity.sk</a>
+                      🌐 <a href="https://blik.gamefinity.sk" style="color: #0066FF; text-decoration: none;">blik.gamefinity.sk</a>
                     </p>
                   </td>
                 </tr>
