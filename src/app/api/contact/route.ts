@@ -25,7 +25,7 @@ export async function POST(request: Request) {
 
     const { error } = await resend.emails.send({
       from: 'BLIK Gamefinity <noreply@blik.gamefinity.sk>',
-      to: ['info@gamefinity.sk'],
+      to: ['martin.miskeje@gamefinity.sk'],
       replyTo: email,
       subject: `[Kontakt] ${reason || 'Správa'} - ${name}`,
       html: `
