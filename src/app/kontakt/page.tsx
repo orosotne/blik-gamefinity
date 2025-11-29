@@ -45,6 +45,7 @@ export default function KontaktPage() {
     company: '',
     reason: '',
     message: '',
+    website: '', // Honeypot pole - skryté pred používateľmi
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -225,6 +226,7 @@ export default function KontaktPage() {
                         company: '',
                         reason: '',
                         message: '',
+                        website: '',
                       });
                     }}
                   >
@@ -293,6 +295,20 @@ export default function KontaktPage() {
                     rows={5}
                     required
                   />
+
+                  {/* Honeypot pole - skryté pred používateľmi, boti ho vyplnia */}
+                  <div className="absolute -left-[9999px] opacity-0 h-0 overflow-hidden" aria-hidden="true">
+                    <label htmlFor="website">Website (nevypĺňajte)</label>
+                    <input
+                      type="text"
+                      id="website"
+                      name="website"
+                      value={formState.website}
+                      onChange={handleChange}
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
+                  </div>
 
                   {submitError && (
                     <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-xl text-red-400 text-sm">
