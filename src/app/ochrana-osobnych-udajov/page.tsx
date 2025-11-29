@@ -556,11 +556,11 @@ export default function OchranaOsobnychUdajovPage() {
                 </p>
                 <div className="space-y-3">
                   <a 
-                    href="mailto:info@gamefinity.sk" 
+                    href="mailto:martin.miskeje@gamefinity.sk" 
                     className="flex items-center gap-3 p-3 bg-background-secondary rounded-xl hover:bg-primary/10 transition-colors"
                   >
                     <Mail className="w-5 h-5 text-primary" />
-                    <span>info@gamefinity.sk</span>
+                    <span>martin.miskeje@gamefinity.sk</span>
                   </a>
                   <div className="flex items-start gap-3 p-3 bg-background-secondary rounded-xl">
                     <Building2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />

@@ -122,7 +122,7 @@ export default function ObchodnePodmienkyPage() {
                   <div className="pt-4 border-t border-border mt-4 grid md:grid-cols-2 gap-4 text-sm">
                     <div>
                       <p className="text-foreground-muted">Email:</p>
-                      <a href="mailto:info@gamefinity.sk" className="text-primary hover:underline">info@gamefinity.sk</a>
+                      <a href="mailto:martin.miskeje@gamefinity.sk" className="text-primary hover:underline">martin.miskeje@gamefinity.sk</a>
                     </div>
                     <div>
                       <p className="text-foreground-muted">Telefón:</p>
@@ -282,7 +282,7 @@ export default function ObchodnePodmienkyPage() {
                   <div className="p-4 bg-background-secondary rounded-xl text-center">
                     <Mail className="w-8 h-8 text-primary mx-auto mb-2" />
                     <p className="font-medium">E-mail</p>
-                    <p className="text-sm text-foreground-muted">info@gamefinity.sk</p>
+                    <p className="text-sm text-foreground-muted">martin.miskeje@gamefinity.sk</p>
                   </div>
                   <div className="p-4 bg-background-secondary rounded-xl text-center">
                     <Phone className="w-8 h-8 text-primary mx-auto mb-2" />
@@ -525,7 +525,7 @@ export default function ObchodnePodmienkyPage() {
                     <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 text-primary font-bold">1</div>
                     <div>
                       <p className="font-medium">Oznámenie o odstúpení</p>
-                      <p className="text-sm text-foreground-secondary">Písomne oznámte odstúpenie na email info@gamefinity.sk alebo poštou</p>
+                      <p className="text-sm text-foreground-secondary">Písomne oznámte odstúpenie na email martin.miskeje@gamefinity.sk alebo poštou</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -636,11 +636,11 @@ export default function ObchodnePodmienkyPage() {
                   <p>Pre uplatnenie reklamácie kontaktujte predávajúceho:</p>
                   <div className="grid md:grid-cols-2 gap-4">
                     <a 
-                      href="mailto:info@gamefinity.sk" 
+                      href="mailto:martin.miskeje@gamefinity.sk" 
                       className="flex items-center gap-3 p-4 bg-background-secondary rounded-xl hover:bg-primary/10 transition-colors"
                     >
                       <Mail className="w-5 h-5 text-primary" />
-                      <span>info@gamefinity.sk</span>
+                      <span>martin.miskeje@gamefinity.sk</span>
                     </a>
                     <a 
                       href="tel:+421917588738" 

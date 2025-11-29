@@ -12,8 +12,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'info@gamefinity.sk',
-    href: 'mailto:info@gamefinity.sk',
+    value: 'martin.miskeje@gamefinity.sk',
+    href: 'mailto:martin.miskeje@gamefinity.sk',
   },
   {
     icon: Phone,

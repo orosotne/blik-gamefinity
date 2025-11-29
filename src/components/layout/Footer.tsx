@@ -173,9 +173,9 @@ export default function Footer() {
         {/* Contact Info */}
         <div className="py-8 border-t border-border">
           <div className="flex flex-col md:flex-row gap-6 md:gap-12 text-sm text-foreground-secondary">
-            <a href="mailto:info@gamefinity.sk" className="flex items-center gap-2 hover:text-foreground transition-colors">
+            <a href="mailto:martin.miskeje@gamefinity.sk" className="flex items-center gap-2 hover:text-foreground transition-colors">
               <Mail className="w-4 h-4" />
-              info@gamefinity.sk
+              martin.miskeje@gamefinity.sk
             </a>
             <a href="tel:+421917588738" className="flex items-center gap-2 hover:text-foreground transition-colors">
               <Phone className="w-4 h-4" />
