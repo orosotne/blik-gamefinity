@@ -1,0 +1,47 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0E1A"/>
+      <stop offset="100%" stop-color="#151B2E"/>
+    </linearGradient>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0066FF"/>
+      <stop offset="100%" stop-color="#00D9A6"/>
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0066FF"/>
+      <stop offset="100%" stop-color="#00D9A6"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Grid pattern -->
+  <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+    <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="100" cy="100" r="200" fill="#0066FF" opacity="0.1"/>
+  <circle cx="1100" cy="530" r="250" fill="#00D9A6" opacity="0.1"/>
+  
+  <!-- Logo container -->
+  <g transform="translate(600, 250)">
+    <!-- Logo box -->
+    <rect x="-60" y="-60" width="120" height="120" rx="24" ry="24" fill="url(#logoGradient)"/>
+    <!-- Letter B -->
+    <text x="0" y="12" text-anchor="middle" fill="white" font-family="system-ui, -apple-system, BlinkMacSystemFont, sans-serif" font-weight="700" font-size="72">B</text>
+  </g>
+  
+  <!-- BLIK text -->
+  <text x="600" y="420" text-anchor="middle" fill="white" font-family="system-ui, -apple-system, BlinkMacSystemFont, sans-serif" font-weight="700" font-size="64">BLIK</text>
+  
+  <!-- Tagline -->
+  <text x="600" y="480" text-anchor="middle" fill="#94A3B8" font-family="system-ui, -apple-system, BlinkMacSystemFont, sans-serif" font-weight="400" font-size="24">Stolová hra s rozšírenou realitou</text>
+  
+  <!-- Gamefinity -->
+  <text x="600" y="580" text-anchor="middle" fill="#64748B" font-family="system-ui, -apple-system, BlinkMacSystemFont, sans-serif" font-weight="500" font-size="18">by Gamefinity</text>
+</svg>
+

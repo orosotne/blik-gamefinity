@@ -21,11 +21,11 @@ function getConfirmationEmailTemplate(name: string, reason: string, company: str
           <!-- Header s gradientom -->
           <tr>
             <td style="background: linear-gradient(135deg, #0066FF 0%, #00D9A6 100%); padding: 32px 40px; text-align: center;">
-              <!-- Logo "B" -->
+              <!-- Logo SVG -->
               <table role="presentation" cellspacing="0" cellpadding="0" style="margin: 0 auto 12px auto;">
                 <tr>
-                  <td style="width: 56px; height: 56px; border-radius: 14px; background: rgba(255,255,255,0.2); text-align: center; vertical-align: middle;">
-                    <span style="color: #ffffff; font-size: 32px; font-weight: 800; font-family: 'Segoe UI', Arial, sans-serif; line-height: 56px;">B</span>
+                  <td style="text-align: center; vertical-align: middle;">
+                    <img src="https://blik.gamefinity.sk/logo_blik.png" alt="BLIK" width="56" height="56" style="display: block; margin: 0 auto; border-radius: 12px;" />
                   </td>
                 </tr>
               </table>

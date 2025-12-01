@@ -89,9 +89,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-white font-bold text-lg">B</span>
-              </div>
+              <img src="/logo.svg" alt="BLIK logo" className="w-10 h-10" />
               <span className="text-xl font-bold">BLIK</span>
             </Link>
             <p className="text-sm text-foreground-secondary mb-6">

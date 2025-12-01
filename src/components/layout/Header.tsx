@@ -49,13 +49,13 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <motion.div
-              className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center"
+            <motion.img
+              src="/logo.svg"
+              alt="BLIK logo"
+              className="w-10 h-10"
               whileHover={{ scale: 1.05, rotate: 5 }}
               transition={{ type: 'spring', stiffness: 400 }}
-            >
-              <span className="text-white font-bold text-lg">B</span>
-            </motion.div>
+            />
             <span className="text-xl font-bold text-foreground group-hover:text-gradient transition-all">
               BLIK
             </span>
