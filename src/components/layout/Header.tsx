@@ -48,17 +48,15 @@ export default function Header() {
       <nav className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-2 group">
             <motion.img
               src="/logo.svg"
-              alt="BLIK logo"
+              alt="BLIK icon"
               className="w-10 h-10"
               whileHover={{ scale: 1.05, rotate: 5 }}
               transition={{ type: 'spring', stiffness: 400 }}
             />
-            <span className="text-xl font-bold text-foreground group-hover:text-gradient transition-all">
-              BLIK
-            </span>
+            <img src="/BLIK_nazovS.svg" alt="BLIK" className="h-6" />
           </Link>
 
           {/* Desktop Navigation */}

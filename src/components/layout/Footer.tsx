@@ -88,9 +88,9 @@ export default function Footer() {
         <div className="py-16 grid grid-cols-2 md:grid-cols-4 gap-8">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center gap-3 mb-6">
-              <img src="/logo.svg" alt="BLIK logo" className="w-10 h-10" />
-              <span className="text-xl font-bold">BLIK</span>
+            <Link href="/" className="flex items-center gap-2 mb-6">
+              <img src="/logo.svg" alt="BLIK icon" className="w-10 h-10" />
+              <img src="/BLIK_nazovS.svg" alt="BLIK" className="h-6" />
             </Link>
             <p className="text-sm text-foreground-secondary mb-6">
               Stolová hra s rozšírenou realitou pre modernú komunikáciu a vzdelávanie.
