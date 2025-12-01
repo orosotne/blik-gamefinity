@@ -25,8 +25,7 @@ function getConfirmationEmailTemplate(name: string, reason: string, company: str
               <table role="presentation" cellspacing="0" cellpadding="0" style="margin: 0 auto 12px auto;">
                 <tr>
                   <td style="text-align: center; vertical-align: middle;">
-                    <img src="https://blik.gamefinity.sk/logo_blik.png" alt="BLIK icon" width="56" height="56" style="display: inline-block; vertical-align: middle; border-radius: 12px;" />
-                    <img src="https://blik.gamefinity.sk/BLIK_nazov.png" alt="BLIK" height="28" style="display: inline-block; vertical-align: middle; margin-left: 8px;" />
+                    <img src="https://blik.gamefinity.sk/BLIK_nazov.png" alt="BLIK" height="40" style="display: block; margin: 0 auto;" />
                   </td>
                 </tr>
               </table>
