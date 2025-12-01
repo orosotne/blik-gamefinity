@@ -18,10 +18,9 @@ export const metadata: Metadata = {
   publisher: "Gamefinity",
   icons: {
     icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
       { url: '/logo_blik.png', type: 'image/png', sizes: '512x512' },
     ],
-    shortcut: '/favicon.svg',
+    shortcut: '/logo_blik.png',
     apple: '/logo_blik.png',
   },
   openGraph: {
