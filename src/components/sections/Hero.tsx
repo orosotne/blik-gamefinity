@@ -7,7 +7,7 @@ import { Button } from '@/components/ui';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
+    <section className="relative min-h-screen flex items-center overflow-hidden pt-20 pb-16 md:pb-0">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background-secondary" />
       <div className="absolute inset-0 bg-grid opacity-40" />
@@ -37,7 +37,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="container-custom relative z-10">
+      <div className="container-custom relative z-10 px-10 sm:px-8 md:px-6">
         <div className="max-w-5xl mx-auto text-center">
           {/* Badge */}
           <motion.div

@@ -28,8 +28,10 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
@@ -40,10 +42,11 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || isMobileMenuOpen
+        isMounted && (isScrolled || isMobileMenuOpen)
           ? 'bg-background/95 backdrop-blur-xl border-b border-border'
           : 'bg-transparent'
       }`}
+      suppressHydrationWarning
     >
       <nav className="container-custom">
         <div className="flex items-center justify-between h-20">
