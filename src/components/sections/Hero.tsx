@@ -32,20 +32,47 @@ export default function Hero() {
     };
   }, []);
 
+  // Helper function to enter fullscreen (cross-browser)
+  const enterFullscreen = (video: HTMLVideoElement) => {
+    if (video.requestFullscreen) {
+      video.requestFullscreen().catch(() => {});
+    } else if ((video as any).webkitEnterFullscreen) {
+      // iOS Safari - native video fullscreen
+      (video as any).webkitEnterFullscreen();
+    } else if ((video as any).webkitRequestFullscreen) {
+      (video as any).webkitRequestFullscreen();
+    } else if ((video as any).mozRequestFullScreen) {
+      (video as any).mozRequestFullScreen();
+    }
+  };
+
   // Auto-scroll and fullscreen when navigating to #hero-video
   useEffect(() => {
     if (typeof window !== 'undefined' && window.location.hash === '#hero-video') {
       const videoElement = document.getElementById('hero-video');
-      if (videoElement) {
-        setTimeout(() => {
-          videoElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          // Auto fullscreen after scroll
+      if (videoElement && videoRef.current) {
+        // On mobile, go straight to fullscreen
+        const isMobile = window.innerWidth < 768;
+        
+        if (isMobile) {
+          // Short delay then fullscreen immediately
           setTimeout(() => {
             if (videoRef.current) {
-              videoRef.current.requestFullscreen().catch(() => {});
+              videoRef.current.play();
+              enterFullscreen(videoRef.current);
             }
-          }, 800);
-        }, 500);
+          }, 300);
+        } else {
+          // Desktop: scroll first, then fullscreen
+          setTimeout(() => {
+            videoElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            setTimeout(() => {
+              if (videoRef.current) {
+                enterFullscreen(videoRef.current);
+              }
+            }, 800);
+          }, 500);
+        }
       }
     }
   }, []);
@@ -87,19 +114,8 @@ export default function Hero() {
         (document as any).mozCancelFullScreen();
       }
     } else {
-      // Enter fullscreen - try multiple methods for cross-browser support
-      if (video.requestFullscreen) {
-        video.requestFullscreen().catch(() => {});
-      } else if ((video as any).webkitEnterFullscreen) {
-        // iOS Safari - this is the key for mobile!
-        (video as any).webkitEnterFullscreen();
-      } else if ((video as any).webkitRequestFullscreen) {
-        (video as any).webkitRequestFullscreen();
-      } else if ((video as any).mozRequestFullScreen) {
-        (video as any).mozRequestFullScreen();
-      } else if ((video as any).msRequestFullscreen) {
-        (video as any).msRequestFullscreen();
-      }
+      // Enter fullscreen using helper
+      enterFullscreen(video);
     }
   };
 
