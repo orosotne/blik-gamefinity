@@ -144,9 +144,11 @@ export default function AkoToFungujePage() {
                   Získať demo
                 </Button>
               </Link>
-              <Button variant="outline" size="lg" leftIcon={<Play className="w-5 h-5" />}>
-                Pozrieť video
-              </Button>
+              <Link href="/#hero-video">
+                <Button variant="outline" size="lg" leftIcon={<Play className="w-5 h-5" />}>
+                  Pozrieť video
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>

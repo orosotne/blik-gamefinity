@@ -1,15 +1,44 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight, Play, Sparkles, Zap, Users, BarChart3, Volume2, VolumeX } from 'lucide-react';
+import { ArrowRight, Play, Sparkles, Zap, Users, BarChart3, Volume2, VolumeX, Maximize2 } from 'lucide-react';
 import { Button } from '@/components/ui';
 
 export default function Hero() {
   const [isMuted, setIsMuted] = useState(true);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Listen for fullscreen changes
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+    
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+  }, []);
+
+  // Auto-scroll and fullscreen when navigating to #hero-video
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.hash === '#hero-video') {
+      const videoElement = document.getElementById('hero-video');
+      if (videoElement) {
+        setTimeout(() => {
+          videoElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          // Auto fullscreen after scroll
+          setTimeout(() => {
+            if (videoRef.current) {
+              videoRef.current.requestFullscreen().catch(() => {});
+            }
+          }, 800);
+        }, 500);
+      }
+    }
+  }, []);
 
   const toggleMute = () => {
     setIsMuted(!isMuted);
@@ -26,6 +55,18 @@ export default function Hero() {
         videoRef.current.play();
       }
       setIsPlaying(!isPlaying);
+    }
+  };
+
+  const toggleFullscreen = () => {
+    if (videoRef.current) {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else {
+        videoRef.current.requestFullscreen().catch((err) => {
+          console.log('Fullscreen error:', err);
+        });
+      }
     }
   };
 
@@ -118,6 +159,7 @@ export default function Hero() {
 
           {/* Video Demo in Phone Mockup */}
           <motion.div
+            id="hero-video"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -139,9 +181,8 @@ export default function Hero() {
                     loop
                     muted={isMuted}
                     playsInline
-                    preload="metadata"
-                    className="w-full h-full object-cover"
-                    poster="/images/cards/card(3).png"
+                    preload="auto"
+                    className={`w-full h-full bg-black ${isFullscreen ? 'object-contain' : 'object-cover'}`}
                   />
                   
                   {/* Play/Pause Button - Center */}
@@ -162,18 +203,30 @@ export default function Hero() {
                     </div>
                   </button>
                   
-                  {/* Mute/Unmute Button - Bottom Right */}
-                  <button 
-                    onClick={toggleMute}
-                    className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-black/80 transition-all duration-200 hover:scale-105 z-10"
-                    aria-label={isMuted ? 'Zapnúť zvuk' : 'Vypnúť zvuk'}
-                  >
-                    {isMuted ? (
-                      <VolumeX className="w-4 h-4 sm:w-5 sm:h-5" />
-                    ) : (
-                      <Volume2 className="w-4 h-4 sm:w-5 sm:h-5" />
-                    )}
-                  </button>
+                  {/* Bottom Controls - Fullscreen & Mute */}
+                  <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 flex items-center gap-2 z-10">
+                    {/* Fullscreen Button */}
+                    <button 
+                      onClick={toggleFullscreen}
+                      className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-black/80 transition-all duration-200 hover:scale-105"
+                      aria-label="Zobraziť na celú obrazovku"
+                    >
+                      <Maximize2 className="w-4 h-4 sm:w-5 sm:h-5" />
+                    </button>
+                    
+                    {/* Mute/Unmute Button */}
+                    <button 
+                      onClick={toggleMute}
+                      className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-black/80 transition-all duration-200 hover:scale-105"
+                      aria-label={isMuted ? 'Zapnúť zvuk' : 'Vypnúť zvuk'}
+                    >
+                      {isMuted ? (
+                        <VolumeX className="w-4 h-4 sm:w-5 sm:h-5" />
+                      ) : (
+                        <Volume2 className="w-4 h-4 sm:w-5 sm:h-5" />
+                      )}
+                    </button>
+                  </div>
                 </div>
                 
                 {/* Home indicator */}
