@@ -1,13 +1,36 @@
 'use client';
 
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight, Play, Sparkles, Zap, Users, BarChart3 } from 'lucide-react';
+import { ArrowRight, Play, Sparkles, Zap, Users, BarChart3, Volume2, VolumeX } from 'lucide-react';
 import { Button } from '@/components/ui';
 
 export default function Hero() {
+  const [isMuted, setIsMuted] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleMute = () => {
+    setIsMuted(!isMuted);
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+    }
+  };
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-20 pb-16 md:pb-0">
+    <section className="relative min-h-screen flex items-center overflow-hidden pt-20 pb-20 sm:pb-24 md:pb-8">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background-secondary" />
       <div className="absolute inset-0 bg-grid opacity-40" />
@@ -79,7 +102,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-8 sm:mb-10 md:mb-12"
           >
             <Link href="/kontakt">
               <Button size="lg" rightIcon={<ArrowRight className="w-5 h-5" />}>
@@ -93,12 +116,86 @@ export default function Hero() {
             </Link>
           </motion.div>
 
+          {/* Video Demo in Phone Mockup */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mb-12 sm:mb-14 md:mb-16"
+          >
+            {/* Phone Mockup Container */}
+            <div className="relative mx-auto max-w-[240px] sm:max-w-[280px] md:max-w-[320px]">
+              {/* Phone Frame */}
+              <div className="relative bg-[#1a1a1a] rounded-[32px] sm:rounded-[36px] md:rounded-[40px] p-1.5 sm:p-2 shadow-2xl shadow-black/50">
+                {/* Notch */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 sm:w-24 h-5 sm:h-6 bg-[#1a1a1a] rounded-b-xl sm:rounded-b-2xl z-10" />
+                
+                {/* Screen */}
+                <div className="relative rounded-[26px] sm:rounded-[30px] md:rounded-[32px] overflow-hidden bg-black aspect-[9/19.5]">
+                  <video 
+                    ref={videoRef}
+                    src="/videos/hero-demo.mp4"
+                    autoPlay
+                    loop
+                    muted={isMuted}
+                    playsInline
+                    preload="metadata"
+                    className="w-full h-full object-cover"
+                    poster="/images/cards/card(3).png"
+                  />
+                  
+                  {/* Play/Pause Button - Center */}
+                  <button 
+                    onClick={togglePlay}
+                    className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${isPlaying ? 'opacity-0 hover:opacity-100' : 'opacity-100'}`}
+                    aria-label={isPlaying ? 'Pozastaviť video' : 'Prehrať video'}
+                  >
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-black/50 backdrop-blur-sm border border-white/30 flex items-center justify-center transition-transform duration-200 hover:scale-110 hover:bg-black/70">
+                      {isPlaying ? (
+                        <svg className="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <rect x="6" y="4" width="4" height="16" rx="1" />
+                          <rect x="14" y="4" width="4" height="16" rx="1" />
+                        </svg>
+                      ) : (
+                        <Play className="w-6 h-6 sm:w-7 sm:h-7 text-white fill-white ml-1" />
+                      )}
+                    </div>
+                  </button>
+                  
+                  {/* Mute/Unmute Button - Bottom Right */}
+                  <button 
+                    onClick={toggleMute}
+                    className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-black/80 transition-all duration-200 hover:scale-105 z-10"
+                    aria-label={isMuted ? 'Zapnúť zvuk' : 'Vypnúť zvuk'}
+                  >
+                    {isMuted ? (
+                      <VolumeX className="w-4 h-4 sm:w-5 sm:h-5" />
+                    ) : (
+                      <Volume2 className="w-4 h-4 sm:w-5 sm:h-5" />
+                    )}
+                  </button>
+                </div>
+                
+                {/* Home indicator */}
+                <div className="absolute bottom-1 sm:bottom-1.5 left-1/2 -translate-x-1/2 w-24 sm:w-28 h-1 bg-white/30 rounded-full" />
+              </div>
+              
+              {/* Glow effect behind phone */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-[48px] blur-2xl -z-10 opacity-60" />
+            </div>
+            
+            {/* Caption */}
+            <p className="text-center text-sm text-foreground-muted mt-4 sm:mt-6">
+              Pozrite si BLIK v akcii
+            </p>
+          </motion.div>
+
           {/* Stats */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto"
+            className="grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto pb-8 sm:pb-10 md:pb-0"
           >
             {[
               { icon: Zap, value: '57', label: 'Unikátnych symbolov' },
