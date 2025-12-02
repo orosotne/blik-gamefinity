@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 import { Header, Footer } from "@/components/layout";
+import { CookieConsent } from "@/components/ui";
 
 const siteUrl = "https://blik.gamefinity.sk";
 
@@ -85,6 +86,9 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        
+        {/* Cookie Consent Banner - GDPR */}
+        <CookieConsent />
         
         {/* Calendly Widget Script */}
         <Script 

@@ -4,6 +4,7 @@ export { default as Section, SectionHeader } from './Section';
 export { default as Input } from './Input';
 export { default as Textarea } from './Textarea';
 export { default as Badge } from './Badge';
+export { default as CookieConsent } from './CookieConsent';
 
 
 
