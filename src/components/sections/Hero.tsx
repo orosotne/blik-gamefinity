@@ -226,9 +226,9 @@ export default function Hero() {
       {/* LAYER 3: SMALL SHARP SYMBOLS (foreground, no blur) */}
       {/* ============================================= */}
       <div className="absolute inset-0 pointer-events-none z-[3] hidden lg:block">
-        {/* Card X - ostrý, vpravo úplne hore */}
+        {/* Card X - ostrý, vpravo hore */}
         <motion.div
-          className="absolute right-[15%] xl:right-[17%] 2xl:right-[19%] top-[3%] w-20 h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28 animate-float-fast"
+          className="absolute right-[12%] xl:right-[14%] 2xl:right-[16%] top-[8%] w-20 h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28 animate-float-fast"
           style={{ 
             filter: 'drop-shadow(0 15px 20px rgba(147, 51, 234, 0.4))',
             '--rotate': '-5deg'
