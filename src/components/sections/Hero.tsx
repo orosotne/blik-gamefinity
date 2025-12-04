@@ -141,6 +141,21 @@ export default function Hero() {
           <img src="/images/cards/card(3).png" alt="" className="w-full h-full object-contain" />
         </motion.div>
 
+        {/* Card X - veľký, rozmazaný, za textom vpravo úplne hore */}
+        <motion.div
+          className="absolute right-[18%] xl:right-[20%] 2xl:right-[22%] top-[2%] w-32 h-32 lg:w-40 lg:h-40 xl:w-48 xl:h-48 opacity-20 animate-float-slow"
+          style={{ 
+            filter: 'blur(3px) drop-shadow(0 30px 40px rgba(147, 51, 234, 0.3))',
+            '--rotate': '-5deg',
+            animationDelay: '0.3s'
+          } as React.CSSProperties}
+          initial={{ scale: 0.5, opacity: 0 }}
+          animate={{ scale: 1, opacity: 0.2 }}
+          transition={{ duration: 1.2, delay: 0.2 }}
+        >
+          <img src="/images/cards/card(x).png" alt="" className="w-full h-full object-contain" />
+        </motion.div>
+
         {/* Auto - veľké, rozmazané, za textom vpravo hore */}
         <motion.div
           className="absolute right-[10%] xl:right-[12%] 2xl:right-[14%] top-[8%] w-36 h-36 lg:w-44 lg:h-44 xl:w-52 xl:h-52 opacity-20 animate-float-slow"
