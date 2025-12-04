@@ -129,7 +129,7 @@ export default function Hero() {
       <div className="absolute inset-0 pointer-events-none z-[0] hidden lg:block">
         {/* Domček - veľký, rozmazaný, za textom vľavo */}
         <motion.div
-          className="absolute left-[8%] xl:left-[12%] top-[20%] w-40 h-40 lg:w-52 lg:h-52 xl:w-64 xl:h-64 opacity-25 animate-float-slow"
+          className="absolute left-[12%] xl:left-[16%] top-[20%] w-40 h-40 lg:w-52 lg:h-52 xl:w-64 xl:h-64 opacity-25 animate-float-slow"
           style={{ 
             filter: 'blur(3px) drop-shadow(0 30px 40px rgba(0, 102, 255, 0.3))',
             '--rotate': '-8deg'
@@ -143,7 +143,7 @@ export default function Hero() {
 
         {/* Auto - veľké, rozmazané, za textom vpravo hore */}
         <motion.div
-          className="absolute right-[3%] xl:right-[5%] 2xl:right-[7%] top-[8%] w-36 h-36 lg:w-44 lg:h-44 xl:w-52 xl:h-52 opacity-20 animate-float-slow"
+          className="absolute right-[10%] xl:right-[12%] 2xl:right-[14%] top-[8%] w-36 h-36 lg:w-44 lg:h-44 xl:w-52 xl:h-52 opacity-20 animate-float-slow"
           style={{ 
             filter: 'blur(3px) drop-shadow(0 30px 40px rgba(0, 102, 255, 0.3))',
             '--rotate': '12deg',
@@ -158,7 +158,7 @@ export default function Hero() {
 
         {/* Prasiatko - veľké, rozmazané, za textom vpravo */}
         <motion.div
-          className="absolute right-[5%] xl:right-[10%] top-[35%] w-44 h-44 lg:w-56 lg:h-56 xl:w-72 xl:h-72 opacity-20 animate-float-slow"
+          className="absolute right-[12%] xl:right-[16%] top-[35%] w-44 h-44 lg:w-56 lg:h-56 xl:w-72 xl:h-72 opacity-20 animate-float-slow"
           style={{ 
             filter: 'blur(4px) drop-shadow(0 30px 40px rgba(255, 107, 74, 0.25))',
             '--rotate': '10deg',
@@ -178,7 +178,7 @@ export default function Hero() {
       <div className="absolute inset-0 pointer-events-none z-[2] hidden lg:block">
         {/* Symboly poistenie - stredný, vľavo */}
         <motion.div
-          className="absolute left-[2%] xl:left-[4%] 2xl:left-[6%] top-[32%] w-24 h-24 lg:w-32 lg:h-32 xl:w-40 xl:h-40 animate-float-medium"
+          className="absolute left-[8%] xl:left-[10%] 2xl:left-[12%] top-[32%] w-24 h-24 lg:w-32 lg:h-32 xl:w-40 xl:h-40 animate-float-medium"
           style={{ 
             filter: 'blur(0.5px) drop-shadow(0 15px 25px rgba(255, 107, 74, 0.3))',
             '--rotate': '5deg',
@@ -193,7 +193,7 @@ export default function Hero() {
 
         {/* Symboly investície - stredný, vpravo dole */}
         <motion.div
-          className="absolute right-[4%] xl:right-[6%] 2xl:right-[8%] top-[62%] w-24 h-24 lg:w-32 lg:h-32 xl:w-40 xl:h-40 animate-float-medium"
+          className="absolute right-[10%] xl:right-[12%] 2xl:right-[14%] top-[62%] w-24 h-24 lg:w-32 lg:h-32 xl:w-40 xl:h-40 animate-float-medium"
           style={{ 
             filter: 'blur(0.5px) drop-shadow(0 15px 25px rgba(0, 217, 166, 0.3))',
             '--rotate': '-8deg',
@@ -208,7 +208,7 @@ export default function Hero() {
 
         {/* Symboly vzdelávanie - stredný, vľavo dole */}
         <motion.div
-          className="absolute left-[3%] xl:left-[5%] 2xl:left-[7%] top-[68%] w-24 h-24 lg:w-30 lg:h-30 xl:w-36 xl:h-36 animate-float-medium"
+          className="absolute left-[9%] xl:left-[11%] 2xl:left-[13%] top-[68%] w-24 h-24 lg:w-30 lg:h-30 xl:w-36 xl:h-36 animate-float-medium"
           style={{ 
             filter: 'blur(0.5px) drop-shadow(0 15px 25px rgba(255, 255, 255, 0.15))',
             '--rotate': '-6deg',
@@ -228,7 +228,7 @@ export default function Hero() {
       <div className="absolute inset-0 pointer-events-none z-[3] hidden lg:block">
         {/* Domček malý - ostrý, vľavo hore */}
         <motion.div
-          className="absolute left-[1%] xl:left-[2%] 2xl:left-[3%] top-[12%] w-20 h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28 animate-float-fast"
+          className="absolute left-[6%] xl:left-[8%] 2xl:left-[10%] top-[12%] w-20 h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28 animate-float-fast"
           style={{ 
             filter: 'drop-shadow(0 15px 20px rgba(0, 102, 255, 0.4))',
             '--rotate': '-15deg'
@@ -242,7 +242,7 @@ export default function Hero() {
 
         {/* Prasiatko malé - ostré, vpravo stred */}
         <motion.div
-          className="absolute right-[1%] xl:right-[2%] 2xl:right-[3%] top-[38%] w-18 h-18 lg:w-22 lg:h-22 xl:w-26 xl:h-26 animate-float-fast"
+          className="absolute right-[6%] xl:right-[8%] 2xl:right-[10%] top-[38%] w-18 h-18 lg:w-22 lg:h-22 xl:w-26 xl:h-26 animate-float-fast"
           style={{ 
             filter: 'drop-shadow(0 12px 18px rgba(255, 107, 74, 0.4))',
             '--rotate': '-10deg',
@@ -257,7 +257,7 @@ export default function Hero() {
 
         {/* Chlapec s kartou - ostrý, vľavo stred-dole */}
         <motion.div
-          className="absolute left-[0%] xl:left-[1%] 2xl:left-[2%] top-[52%] w-18 h-18 lg:w-24 lg:h-24 xl:w-28 xl:h-28 animate-float-fast"
+          className="absolute left-[5%] xl:left-[7%] 2xl:left-[9%] top-[52%] w-18 h-18 lg:w-24 lg:h-24 xl:w-28 xl:h-28 animate-float-fast"
           style={{ 
             filter: 'drop-shadow(0 12px 18px rgba(0, 217, 166, 0.35))',
             '--rotate': '8deg',
@@ -272,7 +272,7 @@ export default function Hero() {
 
         {/* Koník malý - ostrý, vpravo dole */}
         <motion.div
-          className="absolute right-[2%] xl:right-[3%] 2xl:right-[4%] top-[78%] w-16 h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 animate-float-fast"
+          className="absolute right-[7%] xl:right-[9%] 2xl:right-[11%] top-[78%] w-16 h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 animate-float-fast"
           style={{ 
             filter: 'drop-shadow(0 10px 15px rgba(0, 102, 255, 0.35))',
             '--rotate': '15deg',
