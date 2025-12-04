@@ -126,7 +126,7 @@ export default function ValueBanner() {
           className="text-center mt-8"
         >
           <p className="text-foreground-muted text-sm">
-            💡 Po naskenovaní QR kódu namierte kameru na kartu a sledujte, ako ožije v AR
+            ⚠️ Pre najspoľahlivejší zážitok používajte vytlačenú kartu v dobrom svetle. Pri skenovaní z obrazovky môže tracking zlyhávať (odlesky, moiré, blikajúci displej).
           </p>
         </motion.div>
       </motion.div>
