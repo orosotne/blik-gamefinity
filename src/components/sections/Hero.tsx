@@ -141,21 +141,6 @@ export default function Hero() {
           <img src="/images/cards/card(3).png" alt="" className="w-full h-full object-contain" />
         </motion.div>
 
-        {/* Card X - veľký, rozmazaný, za textom vpravo úplne hore */}
-        <motion.div
-          className="absolute right-[18%] xl:right-[20%] 2xl:right-[22%] top-[2%] w-32 h-32 lg:w-40 lg:h-40 xl:w-48 xl:h-48 opacity-20 animate-float-slow"
-          style={{ 
-            filter: 'blur(3px) drop-shadow(0 30px 40px rgba(147, 51, 234, 0.3))',
-            '--rotate': '-5deg',
-            animationDelay: '0.3s'
-          } as React.CSSProperties}
-          initial={{ scale: 0.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.2 }}
-          transition={{ duration: 1.2, delay: 0.2 }}
-        >
-          <img src="/images/cards/card(x).png" alt="" className="w-full h-full object-contain" />
-        </motion.div>
-
         {/* Auto - veľké, rozmazané, za textom vpravo hore */}
         <motion.div
           className="absolute right-[10%] xl:right-[12%] 2xl:right-[14%] top-[8%] w-36 h-36 lg:w-44 lg:h-44 xl:w-52 xl:h-52 opacity-20 animate-float-slow"
@@ -241,6 +226,20 @@ export default function Hero() {
       {/* LAYER 3: SMALL SHARP SYMBOLS (foreground, no blur) */}
       {/* ============================================= */}
       <div className="absolute inset-0 pointer-events-none z-[3] hidden lg:block">
+        {/* Card X - ostrý, vpravo úplne hore */}
+        <motion.div
+          className="absolute right-[15%] xl:right-[17%] 2xl:right-[19%] top-[3%] w-20 h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28 animate-float-fast"
+          style={{ 
+            filter: 'drop-shadow(0 15px 20px rgba(147, 51, 234, 0.4))',
+            '--rotate': '-5deg'
+          } as React.CSSProperties}
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.3, type: 'spring' }}
+        >
+          <img src="/images/cards/card(x).png" alt="" className="w-full h-full object-contain" />
+        </motion.div>
+
         {/* Domček malý - ostrý, vľavo hore */}
         <motion.div
           className="absolute left-[6%] xl:left-[8%] 2xl:left-[10%] top-[12%] w-20 h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28 animate-float-fast"
