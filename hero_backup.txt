@@ -1,0 +1,1 @@
+how c7b0d9d:src/components/sections/Hero.tsx
