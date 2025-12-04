@@ -49,12 +49,12 @@ export default function ValueBanner() {
             transition={{ delay: 0.3 }}
             className="w-full md:w-auto"
           >
-            <Card variant="glass" className="p-6 text-center">
-              <div className="relative mx-auto w-44 h-44 md:w-52 md:h-52 mb-4 rounded-xl overflow-hidden bg-white p-4 flex items-center justify-center">
+            <Card variant="glass" className="p-3 text-center">
+              <div className="relative mx-auto w-28 h-28 md:w-32 md:h-32 mb-3 rounded-lg overflow-hidden bg-white flex items-center justify-center">
                 <img 
-                  src="/images/ar-try/qr-code.png" 
+                  src="/images/ar-try/qr-code2.png" 
                   alt="QR kód pre AR" 
-                  className="w-full h-full object-contain mx-auto"
+                  className="w-[90%] h-[90%] object-contain"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
@@ -93,7 +93,7 @@ export default function ValueBanner() {
             </motion.div>
           </motion.div>
 
-          {/* Card Image - Larger & More Prominent */}
+          {/* Card Image - With glass border */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -101,29 +101,12 @@ export default function ValueBanner() {
             transition={{ delay: 0.5 }}
             className="w-full md:w-auto"
           >
-            <Card variant="glass" className="p-6 md:p-8 text-center border-primary/20 shadow-xl shadow-primary/10">
-              <div className="relative mx-auto w-56 h-56 md:w-72 md:h-72 rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 via-accent/10 to-secondary/20 border border-white/10">
+            <Card variant="glass" className="p-4 md:p-6 text-center">
+              <div className="relative mx-auto w-56 h-56 md:w-72 md:h-72">
                 <img 
                   src="/images/ar-try/card.png" 
                   alt="BLIK karta" 
-                  className="w-full h-full object-contain p-3"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                    target.parentElement!.innerHTML = `
-                      <div class="w-full h-full flex flex-col items-center justify-center p-6">
-                        <div class="grid grid-cols-3 gap-3 mb-4">
-                          <div class="w-12 h-12 rounded-lg bg-primary/30 flex items-center justify-center text-xl">🏠</div>
-                          <div class="w-12 h-12 rounded-lg bg-accent/30 flex items-center justify-center text-xl">💳</div>
-                          <div class="w-12 h-12 rounded-lg bg-secondary/30 flex items-center justify-center text-xl">🔒</div>
-                          <div class="w-12 h-12 rounded-lg bg-primary/30 flex items-center justify-center text-xl">📱</div>
-                          <div class="w-12 h-12 rounded-lg bg-accent/30 flex items-center justify-center text-xl">⭐</div>
-                          <div class="w-12 h-12 rounded-lg bg-secondary/30 flex items-center justify-center text-xl">🎯</div>
-                        </div>
-                        <p class="text-sm text-foreground-muted font-medium">BLIK karta</p>
-                      </div>
-                    `;
-                  }}
+                  className="w-full h-full object-contain"
                 />
               </div>
               <h3 className="font-bold text-lg mb-1 mt-4">Namierte na kartu</h3>
