@@ -50,11 +50,11 @@ export default function ValueBanner() {
             className="w-full md:w-auto"
           >
             <Card variant="glass" className="p-6 text-center">
-              <div className="relative mx-auto w-44 h-44 md:w-52 md:h-52 mb-4 rounded-xl overflow-hidden bg-white p-3 flex items-center justify-center">
+              <div className="relative mx-auto w-44 h-44 md:w-52 md:h-52 mb-4 rounded-xl overflow-hidden bg-white p-4 flex items-center justify-center">
                 <img 
                   src="/images/ar-try/qr-code.png" 
                   alt="QR kód pre AR" 
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain mx-auto"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
