@@ -1,0 +1,84 @@
+# BLIK by Gamefinity
+
+> BLIK je stolová hra s rozšírenou realitou (AR) navrhnutá pre firmy, banky, poisťovne a školy. Je to gamifikovaný komunikačný nástroj, kde hráči hľadajú zhodné symboly medzi kartami a objavujú produkty a služby cez AR vrstvu.
+
+## Základné informácie
+
+- **Názov produktu**: BLIK
+- **Spoločnosť**: Gamefinity s.r.o.
+- **Webová stránka**: https://blik.gamefinity.sk
+- **Lokalita**: Bratislava, Slovensko
+- **Jazyk**: Slovenčina
+
+## Čo je BLIK?
+
+BLIK je rýchla postrehová kartová hra inšpirovaná mechanikou Dobble/Spot It. Každá karta obsahuje 8 unikátnych symbolov a medzi ľubovoľnými dvoma kartami existuje vždy práve jeden zhodný symbol. Hráči súťažia v rýchlosti hľadania tohto spoločného symbolu.
+
+Unikátnou vlastnosťou BLIK je **AR vrstva** (rozšírená realita) - po naskenovaní karty mobilom sa symboly "oživia" a zobrazia interaktívny obsah o produktoch a službách klienta.
+
+## Využitie podľa odvetvia
+
+### Banky
+- Finančná gramotnosť
+- Vzdelávanie o produktoch (účty, hypotéky, investície)
+- Vernostné programy
+
+### Poisťovne
+- Produktové vzdelávanie (životné, majetkové, cestovné poistenie)
+- Onboarding nových klientov
+- Firemné eventy
+
+### Školy
+- Interaktívne vzdelávanie
+- Študijné programy a kurzy
+- E-learning podpora
+
+### Firmy
+- Teambuilding
+- Onboarding zamestnancov
+- Prezentácia firemných hodnôt
+
+### Cestovný ruch
+- Propagácia destinácií
+- Hotely a atrakcie
+- Zážitkový marketing
+
+## Technické špecifikácie
+
+- **Počet kariet**: 57 unikátnych kariet
+- **Symbolov na karte**: 8
+- **Celkom symbolov**: 57 unikátnych
+- **AR technológia**: Webová AR (bez potreby aplikácie)
+- **Počet hráčov**: 2-8
+
+## Kontakt
+
+- **Email**: martin.miskeje@gamefinity.sk
+- **Telefón**: +421 917 588 738
+- **Adresa**: Landererova 8, 811 09 Bratislava
+
+## Často kladené otázky
+
+### Ako funguje AR vrstva?
+Používateľ naskenuje QR kód, ktorý otvorí AR skener v prehliadači. Následne namieri kameru na kartu a symboly sa "oživia" s interaktívnym obsahom.
+
+### Dá sa hra prispôsobiť na mieru?
+Áno, BLIK je 100% customizovateľný. Symboly, dizajn kariet aj AR obsah sa prispôsobujú potrebám klienta.
+
+### Potrebujem špeciálnu aplikáciu?
+Nie, AR funguje priamo v webovom prehliadači cez WebXR technológiu.
+
+### Pre koľko hráčov je hra určená?
+Hra je určená pre 2-8 hráčov, ideálne 3-5 pre optimálny zážitok.
+
+## Odkazy
+
+- Hlavná stránka: https://blik.gamefinity.sk
+- Ako to funguje: https://blik.gamefinity.sk/ako-to-funguje
+- Pravidlá hry: https://blik.gamefinity.sk/ako-sa-hra
+- Kontakt: https://blik.gamefinity.sk/kontakt
+- Riešenia pre banky: https://blik.gamefinity.sk/riesenia/banky
+- Riešenia pre poisťovne: https://blik.gamefinity.sk/riesenia/poistovne
+- Riešenia pre školy: https://blik.gamefinity.sk/riesenia/skoly
+- Riešenia pre firmy: https://blik.gamefinity.sk/riesenia/firmy
+

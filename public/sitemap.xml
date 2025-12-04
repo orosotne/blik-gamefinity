@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Hlavna stranka -->
+  <url>
+    <loc>https://blik.gamefinity.sk/</loc>
+    <lastmod>2024-12-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- O nas -->
+  <url>
+    <loc>https://blik.gamefinity.sk/o-nas</loc>
+    <lastmod>2024-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Kontakt -->
+  <url>
+    <loc>https://blik.gamefinity.sk/kontakt</loc>
+    <lastmod>2024-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Ako to funguje -->
+  <url>
+    <loc>https://blik.gamefinity.sk/ako-to-funguje</loc>
+    <lastmod>2024-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Pravidla hry -->
+  <url>
+    <loc>https://blik.gamefinity.sk/ako-sa-hra</loc>
+    <lastmod>2024-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Dashboard -->
+  <url>
+    <loc>https://blik.gamefinity.sk/dashboard</loc>
+    <lastmod>2024-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Riesenia - hlavna -->
+  <url>
+    <loc>https://blik.gamefinity.sk/riesenia</loc>
+    <lastmod>2024-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Riesenia - Banky -->
+  <url>
+    <loc>https://blik.gamefinity.sk/riesenia/banky</loc>
+    <lastmod>2024-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Riesenia - Poistovne -->
+  <url>
+    <loc>https://blik.gamefinity.sk/riesenia/poistovne</loc>
+    <lastmod>2024-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Riesenia - Skoly -->
+  <url>
+    <loc>https://blik.gamefinity.sk/riesenia/skoly</loc>
+    <lastmod>2024-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Riesenia - Firmy -->
+  <url>
+    <loc>https://blik.gamefinity.sk/riesenia/firmy</loc>
+    <lastmod>2024-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Riesenia - Cestovny ruch -->
+  <url>
+    <loc>https://blik.gamefinity.sk/riesenia/cestovny-ruch</loc>
+    <lastmod>2024-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Pravne dokumenty -->
+  <url>
+    <loc>https://blik.gamefinity.sk/ochrana-osobnych-udajov</loc>
+    <lastmod>2024-12-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://blik.gamefinity.sk/obchodne-podmienky</loc>
+    <lastmod>2024-12-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>
+

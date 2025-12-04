@@ -79,6 +79,90 @@ export default function RootLayout({
         <meta name="theme-color" content="#0066FF" />
         {/* Calendly Widget CSS */}
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+        
+        {/* JSON-LD Structured Data for AI and Search Engines */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://blik.gamefinity.sk/#organization",
+                  "name": "Gamefinity",
+                  "url": "https://blik.gamefinity.sk",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://blik.gamefinity.sk/logo_blik.png"
+                  },
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+421917588738",
+                    "contactType": "sales",
+                    "email": "martin.miskeje@gamefinity.sk",
+                    "availableLanguage": ["Slovak", "English"]
+                  },
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Landererova 8",
+                    "addressLocality": "Bratislava",
+                    "postalCode": "811 09",
+                    "addressCountry": "SK"
+                  },
+                  "sameAs": [
+                    "https://www.linkedin.com/company/gamefinity",
+                    "https://www.instagram.com/gamefinity",
+                    "https://www.facebook.com/gamefinity"
+                  ]
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://blik.gamefinity.sk/#website",
+                  "url": "https://blik.gamefinity.sk",
+                  "name": "BLIK by Gamefinity",
+                  "description": "Stolová hra s rozšírenou realitou pre firmy, banky, poisťovne a školy",
+                  "publisher": {
+                    "@id": "https://blik.gamefinity.sk/#organization"
+                  },
+                  "inLanguage": "sk"
+                },
+                {
+                  "@type": "Product",
+                  "@id": "https://blik.gamefinity.sk/#product",
+                  "name": "BLIK",
+                  "description": "BLIK je stolová hra s AR vrstvou, kde hráči hľadajú zhodné symboly medzi kartami a objavujú produkty a služby cez rozšírenú realitu. Navrhnuté pre banky, poisťovne, školy a firmy.",
+                  "brand": {
+                    "@id": "https://blik.gamefinity.sk/#organization"
+                  },
+                  "category": "Stolové hry / Gamifikácia / AR riešenia",
+                  "audience": {
+                    "@type": "Audience",
+                    "audienceType": "Firmy, banky, poisťovne, školy"
+                  },
+                  "offers": {
+                    "@type": "Offer",
+                    "availability": "https://schema.org/InStock",
+                    "priceCurrency": "EUR"
+                  },
+                  "image": "https://blik.gamefinity.sk/logo_blik.png"
+                },
+                {
+                  "@type": "SoftwareApplication",
+                  "name": "BLIK AR",
+                  "applicationCategory": "GameApplication",
+                  "operatingSystem": "Web Browser",
+                  "description": "Webová AR aplikácia pre interaktívne zobrazenie obsahu na kartách BLIK",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "EUR"
+                  }
+                }
+              ]
+            })
+          }}
+        />
       </head>
       <body className="font-sans antialiased overflow-x-hidden">
         <Header />

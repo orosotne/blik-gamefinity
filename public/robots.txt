@@ -1,0 +1,39 @@
+# Robots.txt pre blik.gamefinity.sk
+# Povolenie vsetkych crawlerov vratane AI
+
+User-agent: *
+Allow: /
+
+# OpenAI crawlery
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Google AI crawler
+User-agent: Google-Extended
+Allow: /
+
+# Anthropic (Claude) crawlery
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Microsoft/Bing AI
+User-agent: Bingbot
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+# Sitemap
+Sitemap: https://blik.gamefinity.sk/sitemap.xml
+

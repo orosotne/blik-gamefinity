@@ -8,9 +8,19 @@ import { Button } from '@/components/ui';
 
 export default function Hero() {
   const [isMuted, setIsMuted] = useState(true);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false); // Start false, set true after mount
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false); // Track if component is mounted
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Set mounted state after hydration
+  useEffect(() => {
+    setIsMounted(true);
+    // Check if video is actually playing after mount
+    if (videoRef.current && !videoRef.current.paused) {
+      setIsPlaying(true);
+    }
+  }, []);
 
   // Listen for fullscreen changes (cross-browser)
   useEffect(() => {
@@ -232,6 +242,9 @@ export default function Hero() {
                     playsInline
                     preload="auto"
                     className={`w-full h-full bg-black ${isFullscreen ? 'object-contain' : 'object-cover'}`}
+                    onPlay={() => setIsPlaying(true)}
+                    onPause={() => setIsPlaying(false)}
+                    suppressHydrationWarning
                   />
                   
                   {/* Play/Pause Button - Center */}
