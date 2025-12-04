@@ -49,8 +49,8 @@ export default function ValueBanner() {
             transition={{ delay: 0.3 }}
             className="w-full md:w-auto"
           >
-            <Card variant="glass" className="p-4 text-center">
-              <div className="relative mx-auto w-32 h-32 md:w-36 md:h-36 mb-3 rounded-xl overflow-hidden bg-white p-2">
+            <Card variant="glass" className="p-6 text-center">
+              <div className="relative mx-auto w-44 h-44 md:w-52 md:h-52 mb-4 rounded-xl overflow-hidden bg-white p-3 flex items-center justify-center">
                 <img 
                   src="/images/ar-try/qr-code.png" 
                   alt="QR kód pre AR" 
