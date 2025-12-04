@@ -141,6 +141,21 @@ export default function Hero() {
           <img src="/images/cards/card(3).png" alt="" className="w-full h-full object-contain" />
         </motion.div>
 
+        {/* Auto - veľké, rozmazané, za textom vpravo hore */}
+        <motion.div
+          className="absolute right-[3%] xl:right-[5%] 2xl:right-[7%] top-[8%] w-36 h-36 lg:w-44 lg:h-44 xl:w-52 xl:h-52 opacity-20 animate-float-slow"
+          style={{ 
+            filter: 'blur(3px) drop-shadow(0 30px 40px rgba(0, 102, 255, 0.3))',
+            '--rotate': '12deg',
+            animationDelay: '0.5s'
+          } as React.CSSProperties}
+          initial={{ scale: 0.5, opacity: 0 }}
+          animate={{ scale: 1, opacity: 0.2 }}
+          transition={{ duration: 1.2, delay: 0.4 }}
+        >
+          <img src="/images/cards/card(4).png" alt="" className="w-full h-full object-contain" />
+        </motion.div>
+
         {/* Prasiatko - veľké, rozmazané, za textom vpravo */}
         <motion.div
           className="absolute right-[5%] xl:right-[10%] top-[35%] w-44 h-44 lg:w-56 lg:h-56 xl:w-72 xl:h-72 opacity-20 animate-float-slow"
@@ -161,21 +176,6 @@ export default function Hero() {
       {/* LAYER 2: MEDIUM SYMBOLS (mid-layer, slight blur) */}
       {/* ============================================= */}
       <div className="absolute inset-0 pointer-events-none z-[2] hidden lg:block">
-        {/* Koník - stredný, ľahký blur, vpravo hore */}
-        <motion.div
-          className="absolute right-[3%] xl:right-[5%] 2xl:right-[7%] top-[8%] w-28 h-28 lg:w-36 lg:h-36 xl:w-44 xl:h-44 animate-float-medium"
-          style={{ 
-            filter: 'blur(1px) drop-shadow(0 20px 30px rgba(0, 102, 255, 0.35))',
-            '--rotate': '12deg',
-            animationDelay: '0.5s'
-          } as React.CSSProperties}
-          initial={{ x: 100, opacity: 0 }}
-          animate={{ x: 0, opacity: 0.85 }}
-          transition={{ duration: 1, delay: 0.6, type: 'spring' }}
-        >
-          <img src="/images/cards/card(4).png" alt="Bezpečnosť" className="w-full h-full object-contain" />
-        </motion.div>
-
         {/* Symboly poistenie - stredný, vľavo */}
         <motion.div
           className="absolute left-[2%] xl:left-[4%] 2xl:left-[6%] top-[32%] w-24 h-24 lg:w-32 lg:h-32 xl:w-40 xl:h-40 animate-float-medium"
