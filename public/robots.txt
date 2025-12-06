@@ -37,3 +37,4 @@ Allow: /
 # Sitemap
 Sitemap: https://blik.gamefinity.sk/sitemap.xml
 
+

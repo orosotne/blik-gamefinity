@@ -10,14 +10,14 @@ const testimonials = [
     quote: 'BLIK úplne zmenil spôsob, akým komunikujeme nové produkty klientom. Engagement sa zvýšil o 340% oproti tradičným materiálom.',
     author: 'Mária Kováčová',
     role: 'Marketing Manager',
-    company: 'Slovenská banka',
+    company: 'BAMIPA',
     avatar: 'MK',
   },
   {
     quote: 'Študenti sú nadšení. Hra ich prirodzene vedie k objavovaniu študijných programov a my vidíme, čo ich skutočne zaujíma.',
     author: 'Peter Novák',
-    role: 'Prorektor pre štúdium',
-    company: 'Technická univerzita',
+    role: 'Brand Manager',
+    company: 'Alfapureo',
     avatar: 'PN',
   },
   {
@@ -31,8 +31,15 @@ const testimonials = [
     quote: 'Dashboard nám ukázal, že klienti sa najviac zaujímajú o produkty, ktoré sme doteraz nepropagovali. Game changer.',
     author: 'Tomáš Baláž',
     role: 'Product Owner',
-    company: 'Poisťovňa Plus',
+    company: 'Orostone',
     avatar: 'TB',
+  },
+  {
+    quote: 'BLIK nám pomohol prezentovať naše dizajnové riešenia úplne novým spôsobom. Klienti si pamätajú zážitok aj mesiace po evente.',
+    author: 'Lucia Malá',
+    role: 'Creative Director',
+    company: 'Ornamenta',
+    avatar: 'LM',
   },
 ];
 
